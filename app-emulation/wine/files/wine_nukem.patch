@@ -4,16 +4,16 @@
 *** 7067,7068 ****
 --- 7067,7080 ----
   
-+     if (!is_complex_fixup(surface->resource.format->color_fixup))
-+     {
-+         TRACE("Fixup:\n");
-+         dump_color_fixup_desc(surface->resource.format->color_fixup);
-+         /* Don't bother setting up a shader for unconverted formats */
-+         ENTER_GL();
-+         glEnable(textype);
-+         checkGLcall("glEnable(textype)");
-+         LEAVE_GL();
-+         return WINED3D_OK;
-+     }
-+ 
+-     if (!is_complex_fixup(surface->resource.format->color_fixup))
+-     {
+-         TRACE("Fixup:\n");
+-         dump_color_fixup_desc(surface->resource.format->color_fixup);
+-         /* Don't bother setting up a shader for unconverted formats */
+-         ENTER_GL();
+-         glEnable(textype);
+-         checkGLcall("glEnable(textype)");
+-         LEAVE_GL();
+-         return WINED3D_OK;
+-     }
+- 
       fixup = get_complex_fixup(surface->resource.format->color_fixup);
