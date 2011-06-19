@@ -20,10 +20,6 @@ DEPEND="${RDEPEND}
 	media-libs/sdl-mixer
 	"
 
-src_unpack() {
-	unpack $(A)
-}
-
 src_compile() {
 	emake || die "failed emake"
 }
