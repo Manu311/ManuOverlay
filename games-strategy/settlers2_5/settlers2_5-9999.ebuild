@@ -16,7 +16,10 @@ KEYWORDS="~x86"
 IUSE=""
 
 RDEPEND=""
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	media-libs/libsdl
+	media-libs/sdl-mixer
+	"
 
 src_unpack() {
 	bzr_src_unpack
