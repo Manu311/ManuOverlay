@@ -2,10 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit autotools bzr
+inherit autotools bzr cmake-utils
 
-EBZR_REPO_URI="lp:s25rttr"
-SRC_URI=""
+SRC_URI="http://www.siedler25.org/uploads/nightly/s25rttr_{$PV}_linux.i386.tar.bz2"
 
 DESCRIPTION="Inofficial expansion for The Settlers 2"
 HOMEPAGE="http://siedler25.org/"
@@ -20,15 +19,3 @@ DEPEND="${RDEPEND}
 	media-libs/libsdl
 	media-libs/sdl-mixer
 	"
-
-src_unpack() {
-	bzr_src_unpack
-}
-
-src_compile() {
-	emake || die "emake failed."
-}
-
-src_install () {
-	emake install || die "emake failed"
-}
