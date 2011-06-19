@@ -18,8 +18,6 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}"
 
-EBZR_REPO_URI "lp:s25rttr"
-
 src_unpack() {
 	bzr_src_unpack
 }
