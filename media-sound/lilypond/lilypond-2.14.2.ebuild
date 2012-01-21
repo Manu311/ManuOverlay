@@ -44,9 +44,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}-qa_pyc_fix.patch"
-	epatch "${FILESDIR}/${P}-python-cflags.patch"
-	epatch "${FILESDIR}/${P}-gcc45.patch"
 	eautoreconf
 }
 
