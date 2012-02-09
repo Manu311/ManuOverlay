@@ -1,0 +1,15 @@
+diff -Naur a/src/r8168_n.c b/src/r8168_n.c
+--- a/src/r8168_n.c	2011-11-16 14:25:12.000000000 +0200
++++ b/src/r8168_n.c	2012-01-08 11:45:49.431251438 +0200
+@@ -14282,7 +14282,11 @@
+ 
+ 		txd = tp->TxDescArray + entry;
+ 		len = frag->size;
++#if LINUX_VERSION_CODE < KERNEL_VERSION(3,2,0)
+ 		addr = ((void *) page_address(frag->page)) + frag->page_offset;
++#else
++		addr = ((void *) page_address(frag->page.p)) + frag->page_offset;
++#endif
+ 		mapping = pci_map_single(tp->pci_dev, addr, len, PCI_DMA_TODEVICE);
+ 
+ 		/* anti gcc 2.95.3 bugware (sic) */
