@@ -34,7 +34,7 @@ src_unpack() {
 }
 
 src_compile() {
-	econf --enable-xtest
+	econf
 	emake || die "make failed"
 }
 
