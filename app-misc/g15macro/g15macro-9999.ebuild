@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $HEADER: $
 
+EAPI="4"
+
 inherit eutils subversion autotools
 
 DESCRIPTION="Macro recording plugin to G15daemon"
