@@ -28,7 +28,7 @@ RDEPEND="${DEPEND}
 src_unpack() {
 	subversion_src_unpack
 	cd "${S}"
-	./bootstrap
+	./autogen.sh
 }
 
 src_compile() {
