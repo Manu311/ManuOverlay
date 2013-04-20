@@ -1,5 +1,7 @@
 EAPI=5
 
+inherit git-2
+
 DESCRIPTION="Pidgin plugin for adding Xfire accounts and connecting to the Xfire network"
 HOMEPAGE="http://gfireproject.org"
 EGIT_REPO_URI="git://github.com/gfireproject/gfire.git"
@@ -9,7 +11,9 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-DEPEND="dev-vcs/git"
+src_prepare() {
+	sh autogen.sh
+}
 
 src_configure() {
 	econf --prefix=/usr
