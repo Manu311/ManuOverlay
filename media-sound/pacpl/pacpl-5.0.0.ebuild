@@ -48,11 +48,12 @@ OPT="media-sound/lame
 
 src_prepare() {
 	sed -i -e 's/\(ac_perl_modules="\)Switch/\1strict/' configure || die
+	epatch "${FILESDIR}/return-code.patch"
 }
 
 src_configure() {
-	econf
-		--disable
+	econf \
+		|| die "configure failed"
 }
 
 src_install() {
