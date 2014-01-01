@@ -26,7 +26,9 @@ RDEPEND="${DEPEND}
 	dev-perl/MP4-Info
 	dev-perl/MP3-Tag
 	dev-perl/ogg-vorbis-header
-	dev-perl/CDDB_get"
+	dev-perl/CDDB_get
+	dev-perl/CDDB
+	dev-perl/Parallel-ForkManager"
 
 OPT="media-sound/lame
 	media-sound/toolame
@@ -46,17 +48,11 @@ OPT="media-sound/lame
 
 src_prepare() {
 	sed -i -e 's/\(ac_perl_modules="\)Switch/\1strict/' configure || die
-	epatch "${FILESDIR}/45_case-independent-flac-tags.patch"
-	epatch "${FILESDIR}/switch-to-given-when.patch"
 }
 
 src_configure() {
-	econf \
-		--without-d3lphin \
-		$(use_with amarok) \
-		$(use_with dolphin) \
-		$(use_with konqueror konq) \
-		|| die "configure failed"
+	econf
+		--disable
 }
 
 src_install() {

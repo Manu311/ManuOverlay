@@ -1,0 +1,13 @@
+*** pacpl.orig/configure	2014-01-01 14:52:06.075044205 +0100
+--- pacpl/configure	2014-01-01 14:50:35.115050343 +0100
+***************
+*** 5381,5384 ****
+  { $as_echo "$as_me:${as_lineno-$LINENO}: make && make install" >&5
+  $as_echo "$as_me: make && make install" >&6;}
+  
+! exit 1
+--- 5381,5384 ----
+  { $as_echo "$as_me:${as_lineno-$LINENO}: make && make install" >&5
+  $as_echo "$as_me: make && make install" >&6;}
+  
+! exit 0
